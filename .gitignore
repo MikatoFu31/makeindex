@@ -1,0 +1,5 @@
+*.exe
+hsptmp
+obj
+packfile
+start.ax
