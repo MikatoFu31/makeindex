@@ -34,6 +34,11 @@
 	
 	sdim musicpathes,65536
 	sdim musicpath,512
+	exist "playpath.rsv"
+	if strsize=-1{
+		mes "Fatal: cannot find \"playpath.rsv\""
+		end
+	}
 	bload "playpath.rsv",musicpathes
 	strrep musicpathes,"%CURRENT%",apppath
 	strrep musicpathes,"%USERNAME%",sysinfo(1)
@@ -41,6 +46,11 @@
 	strrep musicpathes,"%DESKTOP%",dir_desktop
 	sdim filetype,65536
 	sdim ftone,256
+	exist "filetype.rsv"
+	if strsize=-1{
+		mes "Fatal: cannot find \"filetype.rsv\""
+		end
+	}
 	bload "filetype.rsv",filetype
 	mes "Directory:"+musicpath
 	
